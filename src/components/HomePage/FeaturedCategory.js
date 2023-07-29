@@ -57,8 +57,8 @@ const FeaturedCategory = () => {
   ];
 
   return (
-    <div className='py-6'>
-      <h1 className='text-2xl font-bold text-primary'>Featured Categories</h1>
+    <div className='mb-14'>
+      <h1 className='text-2xl font-bold text-primary '>Featured Categories</h1>
       <div className='grid grid-cols-2 md:grid-cols-5 md:gap-5'>
         {categories.map((item, i) => (
           <CategoryCard title={item.title} icon={item.icon} key={i} />

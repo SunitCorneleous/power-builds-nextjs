@@ -3,13 +3,13 @@ import React from 'react';
 
 const ProductCard = () => {
   return (
-    <div className='mt-6 rounded-md shadow-md p-2 flex bg-violet-100 cursor-pointer'>
+    <div className='mt-6 rounded-md shadow-md p-4 flex bg-violet-100 cursor-pointer'>
       <Image
         src='https://www.startech.com.bd/image/cache/catalog/processor/intel/i5-12600k/i5-12600k-01-500x500.jpg'
         alt='product'
         width='180'
         height='220'
-        className='rounded-md mr-2'
+        className='rounded-md mr-4'
       />
 
       <div>

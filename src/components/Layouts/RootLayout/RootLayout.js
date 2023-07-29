@@ -24,6 +24,11 @@ const RootLayout = ({ children }) => {
       {/* content */}
 
       <PageContainer>{children}</PageContainer>
+
+      {/* footer */}
+      <div className='md:w-[85%] md:mx-auto md:py-6 py-4 px-4'>
+        <h1 className='text-center'>footer</h1>
+      </div>
     </div>
   );
 };
