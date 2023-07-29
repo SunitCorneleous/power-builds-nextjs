@@ -1,13 +1,15 @@
+import Banner from '@/components/HomePage/Banner';
+import FeaturedCategory from '@/components/HomePage/FeaturedCategory';
+import FeaturedProducts from '@/components/HomePage/FeaturedProducts';
 import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
-import PageContainer from '@/components/UI/PageContainer';
 
 export default function HomePage() {
   return (
-    <PageContainer>
-      <div>
-        <h1>This is home page</h1>
-      </div>
-    </PageContainer>
+    <div>
+      <Banner />
+      <FeaturedProducts />
+      <FeaturedCategory />
+    </div>
   );
 }
 

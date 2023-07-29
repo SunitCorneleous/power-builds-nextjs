@@ -1,6 +1,7 @@
 import React from 'react';
 import DropDown from './components/DropDown';
 import PrimaryButton from '@/components/UI/PrimaryButton';
+import PageContainer from '@/components/UI/PageContainer';
 
 const RootLayout = ({ children }) => {
   return (
@@ -22,7 +23,7 @@ const RootLayout = ({ children }) => {
 
       {/* content */}
 
-      <div>{children}</div>
+      <PageContainer>{children}</PageContainer>
     </div>
   );
 };
