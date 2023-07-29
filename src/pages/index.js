@@ -1,12 +1,16 @@
-import { Button } from 'antd';
+import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
+import PageContainer from '@/components/UI/PageContainer';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div>
-      <h1>This is home page</h1>
-      <Button className='bg-violet-600 border-none text-white'>
-        Primary Button
-      </Button>
-    </div>
+    <PageContainer>
+      <div>
+        <h1>This is home page</h1>
+      </div>
+    </PageContainer>
   );
 }
+
+HomePage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
