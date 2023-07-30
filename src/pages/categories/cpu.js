@@ -3,8 +3,6 @@ import ProductCard from "@/components/UI/ProductCard";
 import React from "react";
 
 const CpuPage = ({ product }) => {
-  console.log("this is from cpu page:", product);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5">
       {product.map((item, i) => (
