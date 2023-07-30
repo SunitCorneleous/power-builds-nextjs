@@ -1,30 +1,31 @@
-const { MongoClient, ServerApiVersion } = require("mongodb");
+// api/getAllProducts.js
+import { MongoClient } from "mongodb";
+
 const uri = process.env.DATABASE_URI;
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+export default async function getAllProducts(req, res) {
+  const client = new MongoClient(uri, {
+    serverApi: {
+      version: "1",
+      strict: true,
+      deprecationErrors: true,
+    },
+  });
 
-async function run(req, res) {
   try {
     await client.connect();
-
     const productCollection = client.db("power-builds").collection("products");
 
-    if (req.method === "GET") {
-      const result = await productCollection.find({}).toArray();
+    const products = await productCollection.find({}).toArray();
 
-      res.send({ message: "success", status: 200, data: result });
-    }
-
-    console.log("Database connection established");
+    res.status(200).json({
+      message: "Products retrieved successfully",
+      data: products,
+    });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    res.status(500).json({ error: "Unable to fetch products" });
   } finally {
     // await client.close();
   }
 }
-
-export default run;

@@ -1,13 +1,13 @@
-import Banner from '@/components/HomePage/Banner';
-import FeaturedCategory from '@/components/HomePage/FeaturedCategory';
-import FeaturedProducts from '@/components/HomePage/FeaturedProducts';
-import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
+import Banner from "@/components/HomePage/Banner";
+import FeaturedCategory from "@/components/HomePage/FeaturedCategory";
+import FeaturedProducts from "@/components/HomePage/FeaturedProducts";
+import RootLayout from "@/components/Layouts/RootLayout/RootLayout";
 
-export default function HomePage() {
+export default function HomePage({ products }) {
   return (
     <div>
       <Banner />
-      <FeaturedProducts />
+      <FeaturedProducts products={products} />
       <FeaturedCategory />
     </div>
   );
@@ -15,4 +15,17 @@ export default function HomePage() {
 
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
+};
+
+export const getStaticProps = async () => {
+  const res = await fetch("http://localhost:3002/api/products");
+  const products = await res.json();
+
+  console.log(products);
+
+  return {
+    props: {
+      products,
+    },
+  };
 };
