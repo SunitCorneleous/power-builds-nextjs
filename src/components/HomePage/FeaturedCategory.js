@@ -28,7 +28,7 @@ const FeaturedCategory = () => {
     {
       title: "RAM",
       icon: <CgSmartphoneRam size={55}></CgSmartphoneRam>,
-      path: "categories/cpu",
+      path: "categories/ram",
     },
     {
       title: "Power Supply Unit",
