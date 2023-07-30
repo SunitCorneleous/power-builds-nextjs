@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductCard = ({ data }) => {
   return (
-    <div className="mt-6 rounded-md shadow-md p-4 flex bg-violet-100 cursor-pointer">
+    <div className="mt-6 rounded-md shadow-md p-4 flex bg-violet-100 cursor-pointer min-h-[250px] max-h-[250px]">
       <Image
         src={data.image}
         alt="product"

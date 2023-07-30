@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      products,
+      products: products.data.slice(0, 6),
     },
   };
 };
