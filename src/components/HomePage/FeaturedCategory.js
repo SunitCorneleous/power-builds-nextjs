@@ -33,37 +33,37 @@ const FeaturedCategory = () => {
     {
       title: "Power Supply Unit",
       icon: <FaPowerOff size={55}></FaPowerOff>,
-      path: "categories/cpu",
+      path: "categories/psu",
     },
     {
       title: "Storage Device",
       icon: <GrStorage size={55}></GrStorage>,
-      path: "categories/cpu",
+      path: "categories/storage",
     },
     {
       title: "Monitor",
       icon: <FiMonitor size={55}></FiMonitor>,
-      path: "categories/cpu",
+      path: "categories/monitor",
     },
     {
       title: "GPU",
       icon: <BsGpuCard size={55}></BsGpuCard>,
-      path: "categories/cpu",
+      path: "categories/gpu",
     },
     {
       title: "Mouse",
       icon: <BsFillMouseFill size={55}></BsFillMouseFill>,
-      path: "categories/cpu",
+      path: "categories/mouse",
     },
     {
       title: "Keyboard",
       icon: <BsFillKeyboardFill size={55}></BsFillKeyboardFill>,
-      path: "categories/cpu",
+      path: "categories/keyboard",
     },
     {
       title: "Casing",
       icon: <PiComputerTowerBold size={55}></PiComputerTowerBold>,
-      path: "categories/cpu",
+      path: "categories/casing",
     },
   ];
 
