@@ -1,8 +1,11 @@
 import RootLayout from "@/components/Layouts/RootLayout/RootLayout";
 import Image from "next/image";
 import React from "react";
+import { AiFillStar } from "react-icons/ai";
 
 const ProductsPage = ({ product }) => {
+  const rating = parseInt(product.rating.toFixed());
+
   return (
     <div className="flex flex-col md:flex-row">
       <Image src={product.image} width={500} height={500} alt="product image" />
@@ -25,6 +28,14 @@ const ProductsPage = ({ product }) => {
               <span className="text-red-700 font-semibold">Stock Out</span>
             )}
           </p>
+        </div>
+        <div className="pt-6 flex items-center">
+          <p className="text-xl mr-2">Rating: </p>
+          {Array(rating)
+            .fill(rating)
+            .map((_, i) => (
+              <AiFillStar size={35} key={i} className="text-yellow-400" />
+            ))}
         </div>
       </div>
     </div>
