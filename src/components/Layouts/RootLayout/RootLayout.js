@@ -3,10 +3,11 @@ import DropDown from "./components/DropDown";
 import PrimaryButton from "@/components/UI/PrimaryButton";
 import PageContainer from "@/components/UI/PageContainer";
 import Link from "next/link";
+import Footer from "./components/Footer";
 
 const RootLayout = ({ children }) => {
   return (
-    <div className="">
+    <div>
       {/* header */}
       <div className="flex justify-between items-center  md:w-[85%] md:mx-auto md:py-6 py-4 px-4">
         {/* logo and categories */}
@@ -29,8 +30,8 @@ const RootLayout = ({ children }) => {
       <PageContainer>{children}</PageContainer>
 
       {/* footer */}
-      <div className="md:w-[85%] md:mx-auto md:py-6 py-4 px-4">
-        <h1 className="text-center">footer</h1>
+      <div className=" md:mx-auto md:py-6 py-4">
+        <Footer />
       </div>
     </div>
   );

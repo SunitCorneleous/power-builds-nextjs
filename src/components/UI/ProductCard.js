@@ -1,20 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 const ProductCard = ({ data }) => {
   const router = useRouter();
 
   return (
     <Link href={`${router.basePath}/products/${data._id}`}>
-      <div className="mt-6 rounded-md shadow-md p-4 flex bg-violet-100 cursor-pointer min-h-[250px] max-h-[250px]">
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 1 }}
+        className="mt-6 rounded-md shadow-md p-4 flex flex-col bg-violet-100 cursor-pointer h-auto lg:min-h-[250px] lg:max-w-[350px] mx-auto"
+      >
         <Image
           src={data.image}
           alt="product"
-          width="180"
-          height="220"
-          className="rounded-md mr-4"
+          width="320"
+          height="320"
+          className="rounded-md w-full mx-auto mb-4 "
         />
 
         <div>
@@ -29,7 +34,7 @@ const ProductCard = ({ data }) => {
             <p>Rating: {data.rating}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

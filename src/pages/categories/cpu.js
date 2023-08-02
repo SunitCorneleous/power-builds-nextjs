@@ -4,7 +4,7 @@ import React from "react";
 
 const CpuPage = ({ product }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-3">
       {product.map((item, i) => (
         <ProductCard key={i} data={item}></ProductCard>
       ))}
