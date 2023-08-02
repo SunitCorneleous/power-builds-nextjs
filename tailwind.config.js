@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#53289e",
+        "primary-light": "#ede9fe",
       },
       /*  fontFamily: {
         sans: ['Roboto', 'Arial', 'sans-serif'], // Define your custom font family

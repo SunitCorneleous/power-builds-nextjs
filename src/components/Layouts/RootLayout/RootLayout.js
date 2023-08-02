@@ -4,8 +4,11 @@ import PrimaryButton from "@/components/UI/PrimaryButton";
 import PageContainer from "@/components/UI/PageContainer";
 import Link from "next/link";
 import Footer from "./components/Footer";
+import { useRouter } from "next/router";
 
 const RootLayout = ({ children }) => {
+  const router = useRouter();
+
   return (
     <div>
       {/* header */}
@@ -21,7 +24,7 @@ const RootLayout = ({ children }) => {
 
         {/* pc builder button and login */}
         <div>
-          <Link href="pc-builder">
+          <Link href={`${router.basePath}/pc-builder`}>
             <PrimaryButton customClass="">PC Builder</PrimaryButton>
           </Link>
         </div>
