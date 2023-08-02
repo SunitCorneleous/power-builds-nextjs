@@ -9,7 +9,7 @@ import {
   BsFillKeyboardFill,
 } from "react-icons/bs";
 import { CgSmartphoneRam } from "react-icons/cg";
-import { GrStorage } from "react-icons/gr";
+import { MdStorage } from "react-icons/md";
 import { PiComputerTowerBold } from "react-icons/pi";
 import Link from "next/link";
 
@@ -37,7 +37,7 @@ const FeaturedCategory = () => {
     },
     {
       title: "Storage Device",
-      icon: <GrStorage size={55}></GrStorage>,
+      icon: <MdStorage size={55}></MdStorage>,
       path: "categories/storage",
     },
     {
@@ -70,7 +70,7 @@ const FeaturedCategory = () => {
   return (
     <div className="mb-14">
       <h1 className="text-2xl font-bold text-primary ">Featured Categories</h1>
-      <div className="grid grid-cols-2 md:grid-cols-5 md:gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-5 p-2">
         {categories.map((item, i) => (
           <Link href={item.path} key={i}>
             <CategoryCard title={item.title} icon={item.icon} key={i} />

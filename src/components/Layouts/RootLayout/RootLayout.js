@@ -21,7 +21,9 @@ const RootLayout = ({ children }) => {
 
         {/* pc builder button and login */}
         <div>
-          <PrimaryButton customClass="">PC Builder</PrimaryButton>
+          <Link href="pc-builder">
+            <PrimaryButton customClass="">PC Builder</PrimaryButton>
+          </Link>
         </div>
       </div>
 
