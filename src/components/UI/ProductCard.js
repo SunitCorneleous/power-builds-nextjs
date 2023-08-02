@@ -8,12 +8,12 @@ const ProductCard = ({ data }) => {
   const router = useRouter();
 
   return (
-    <Link href={`${router.basePath}/products/${data._id}`}>
-      <motion.div
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 1 }}
-        className="mt-6 rounded-md shadow-md p-4 flex flex-col bg-violet-100 cursor-pointer h-auto lg:min-h-[250px] lg:max-w-[350px] mx-auto"
-      >
+    <motion.div
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 1 }}
+      className="mt-6 rounded-md shadow-md flex flex-col bg-violet-100 cursor-pointer h-auto lg:min-h-[250px] lg:max-w-[350px] mx-auto"
+    >
+      <Link href={`${router.basePath}/products/${data._id}`} className="p-4 ">
         <Image
           src={data.image}
           alt="product"
@@ -34,8 +34,8 @@ const ProductCard = ({ data }) => {
             <p>Rating: {data.rating}</p>
           </div>
         </div>
-      </motion.div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 };
 
