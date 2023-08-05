@@ -1,15 +1,16 @@
 import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
 import PrimaryButton from '@/components/UI/PrimaryButton';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const SelectProductPage = ({ products }) => {
-  console.log(products[0]);
+  const router = useRouter();
 
   return (
     <div>
       <h1 className='text-2xl text-center text-primary font-semibold'>
-        Select your CPU
+        Select your {router?.query?.pageTitle}
       </h1>
 
       {/* components with details */}
@@ -18,7 +19,7 @@ const SelectProductPage = ({ products }) => {
         {products.map((item, i) => (
           <div
             key={i}
-            className='w-auto mb-6 bg-primary-light p-2 rounded-md flex md:w-[80%] mx-auto'
+            className='w-auto mb-6 bg-primary-light p-2 rounded-md flex md:w-[95%] mx-auto'
           >
             <Image
               src={item.image}
@@ -34,7 +35,7 @@ const SelectProductPage = ({ products }) => {
             <div className='w-[15%] ml-auto flex flex-col justify-center items-center'>
               <p className='text-lg font-semibold'>Price: {item.price}</p>
               <PrimaryButton customClass='bg-primary p-2 mt-2'>
-                Choose
+                Add
               </PrimaryButton>
             </div>
           </div>

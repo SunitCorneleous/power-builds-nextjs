@@ -36,7 +36,12 @@ const Component = ({ icon, title, query }) => {
 
       {/* CHOOSE BUTTON OR PRICE */}
       <div className='md:mr-4 flex items-center'>
-        <Link href={`pc-builder/select-product/${query}`}>
+        <Link
+          href={{
+            pathname: `pc-builder/select-product/${query}`,
+            query: { pageTitle: title },
+          }}
+        >
           <PrimaryButton customClass='bg-primary p-2'>Choose</PrimaryButton>
         </Link>
       </div>
