@@ -1,8 +1,9 @@
 import PrimaryButton from '@/components/UI/PrimaryButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-const Component = ({ icon, title }) => {
+const Component = ({ icon, title, query }) => {
   return (
     <div className='bg-primary-light md:h-[110px] mt-5 rounded-md pt-3 pl-3 text-primary md:flex md:justify-between grid grid-cols-2 gap-5'>
       <div className='border border-dashed border-primary h-[90px] w-[90px] rounded-md flex justify-center items-center'>
@@ -29,13 +30,15 @@ const Component = ({ icon, title }) => {
           className='w-[70px] h-[70px] rounded-md'
         />
         <div>
-          <h3>Intel 10th Gen Core i3 10100F Processor</h3>
+          <h3 className='md:ml-2'>Intel 10th Gen Core i3 10100F Processor</h3>
         </div>
       </div>
 
       {/* CHOOSE BUTTON OR PRICE */}
       <div className='md:mr-4 flex items-center'>
-        <PrimaryButton customClass='bg-primary p-2'>Choose</PrimaryButton>
+        <Link href={`pc-builder/select-product/${query}`}>
+          <PrimaryButton customClass='bg-primary p-2'>Choose</PrimaryButton>
+        </Link>
       </div>
     </div>
   );

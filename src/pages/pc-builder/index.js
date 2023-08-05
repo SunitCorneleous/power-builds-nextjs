@@ -11,33 +11,38 @@ import {
 import { CgSmartphoneRam } from 'react-icons/cg';
 import { FaPowerOff } from 'react-icons/fa';
 import { MdStorage } from 'react-icons/md';
-import { PiComputerTowerBold } from 'react-icons/pi';
 
 const PcBuilderPage = () => {
   const components = [
     {
       title: 'CPU / Processor',
       icon: <FiCpu size={35}></FiCpu>,
+      query: 'cpu',
     },
     {
       title: 'Motherboard',
       icon: <BsMotherboard size={35}></BsMotherboard>,
+      query: 'motherboard',
     },
     {
       title: 'RAM',
       icon: <CgSmartphoneRam size={35}></CgSmartphoneRam>,
+      query: 'ram',
     },
     {
       title: 'Power Supply Unit',
       icon: <FaPowerOff size={35}></FaPowerOff>,
+      query: 'psu',
     },
     {
       title: 'Storage Device',
       icon: <MdStorage size={35}></MdStorage>,
+      query: 'storage',
     },
     {
       title: 'Monitor',
       icon: <FiMonitor size={35}></FiMonitor>,
+      query: 'monitor',
     },
   ];
 
@@ -55,7 +60,12 @@ const PcBuilderPage = () => {
         {/* components */}
 
         {components.map((item, i) => (
-          <Component icon={item.icon} key={i} title={item.title} />
+          <Component
+            icon={item.icon}
+            key={i}
+            title={item.title}
+            query={item.query}
+          />
         ))}
       </div>
     </div>
