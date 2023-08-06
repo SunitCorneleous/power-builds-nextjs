@@ -52,7 +52,7 @@ const PcBuilderPage = () => {
         Build your dream PC on your own
       </h1>
 
-      <div className='mt-12 md:w-[75%] mx-auto'>
+      <div className='mt-12 md:w-[85%] mx-auto'>
         <h2 className='text-2xl text-primary'>
           Select your desired components
         </h2>
