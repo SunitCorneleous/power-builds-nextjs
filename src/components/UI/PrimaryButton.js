@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PrimaryButton = ({ children, customClass }) => {
+const PrimaryButton = ({ children, customClass, clickHandler }) => {
   return (
     <motion.button
+      onClick={clickHandler}
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 1 }}
       className={` text-white font-bold rounded-md md:text-xl ${

@@ -1,11 +1,16 @@
 import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
 import PrimaryButton from '@/components/UI/PrimaryButton';
+import { addComponent } from '@/redux/features/pcBuilderSlice';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 const SelectProductPage = ({ products }) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+
+  const componentName = router?.query?.pageTitle?.split(' ')[0];
 
   return (
     <div>
@@ -34,7 +39,13 @@ const SelectProductPage = ({ products }) => {
 
             <div className='w-[15%] ml-auto flex flex-col justify-center items-center'>
               <p className='text-lg font-semibold'>Price: {item.price}</p>
-              <PrimaryButton customClass='bg-primary p-2 mt-2'>
+              <PrimaryButton
+                clickHandler={() => {
+                  dispatch(addComponent({ item, componentName }));
+                  router.push('/pc-builder');
+                }}
+                customClass='bg-primary p-2 mt-2'
+              >
                 Add
               </PrimaryButton>
             </div>
