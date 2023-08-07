@@ -1,4 +1,5 @@
 import PrimaryButton from '@/components/UI/PrimaryButton';
+import { checkComponents } from '@/utils/checkComponents';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -53,7 +54,9 @@ const Component = ({ icon, title, query }) => {
             query: { pageTitle: title },
           }}
         >
-          <PrimaryButton customClass='bg-primary p-2'>Choose</PrimaryButton>
+          <PrimaryButton customClass='bg-primary p-2'>
+            Add To Builder
+          </PrimaryButton>
         </Link>
       </div>
     </div>
