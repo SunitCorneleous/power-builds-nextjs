@@ -8,9 +8,9 @@ import { useSelector } from 'react-redux';
 const Component = ({ icon, title, query }) => {
   const { components } = useSelector(state => state.pcBuilder);
 
-  const componentName = title.split(' ')[0].toLowerCase();
+  const componentName = title?.split(' ')[0].toLowerCase();
 
-  const addedComponent = components[componentName];
+  const addedComponent = components[componentName] || {};
 
   return (
     <div className='bg-primary-light md:h-[110px] mt-5 rounded-md pt-3 pl-3 text-primary md:flex md:justify-between grid grid-cols-2 gap-5'>

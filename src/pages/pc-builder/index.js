@@ -1,7 +1,7 @@
 import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
 import Component from './components/Component';
 import { FiCpu, FiMonitor } from 'react-icons/fi';
-import { BsMotherboard } from 'react-icons/bs';
+import { BsGpuCard, BsMotherboard } from 'react-icons/bs';
 import { CgSmartphoneRam } from 'react-icons/cg';
 import { FaPowerOff } from 'react-icons/fa';
 import { MdStorage } from 'react-icons/md';
@@ -29,6 +29,11 @@ const PcBuilderPage = () => {
       title: 'RAM',
       icon: <CgSmartphoneRam size={35}></CgSmartphoneRam>,
       query: 'ram',
+    },
+    {
+      title: 'GPU',
+      icon: <BsGpuCard size={35}></BsGpuCard>,
+      query: 'gpu',
     },
     {
       title: 'Power Supply Unit',
@@ -60,12 +65,12 @@ const PcBuilderPage = () => {
 
         {/* components */}
 
-        {allComponents.map((item, i) => (
+        {allComponents?.map((item, i) => (
           <Component
-            icon={item.icon}
+            icon={item?.icon}
             key={i}
-            title={item.title}
-            query={item.query}
+            title={item?.title}
+            query={item?.query}
           />
         ))}
       </div>

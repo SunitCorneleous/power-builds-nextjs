@@ -8,6 +8,7 @@ const initialState = {
     power: {},
     storage: {},
     monitor: {},
+    gpu: {},
   },
 };
 
@@ -29,6 +30,8 @@ export const pcBuilderSlice = createSlice({
       } else if (componentName === 'storage') {
         state.components[componentName] = action.payload.item;
       } else if (componentName === 'monitor') {
+        state.components[componentName] = action.payload.item;
+      } else if (componentName === 'gpu') {
         state.components[componentName] = action.payload.item;
       }
     },

@@ -1,10 +1,10 @@
-import RootLayout from "@/components/Layouts/RootLayout/RootLayout";
-import ProductCard from "@/components/UI/ProductCard";
-import React from "react";
+import RootLayout from '@/components/Layouts/RootLayout/RootLayout';
+import ProductCard from '@/components/UI/ProductCard';
+import React from 'react';
 
 const MousePage = ({ product }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5">
+    <div className='grid grid-cols-1 md:grid-cols-3 md:gap-5'>
       {product.map((item, i) => (
         <ProductCard key={i} data={item}></ProductCard>
       ))}
@@ -20,7 +20,7 @@ MousePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://localhost:3002/api/productByCategory?category=mouse`
+    `http://localhost:5000/api/productByCategory?category=mouse`
   );
   const product = await res.json();
 
