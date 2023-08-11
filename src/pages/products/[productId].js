@@ -49,7 +49,7 @@ ProductsPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch('http://localhost:5000/api/products');
+  const res = await fetch(`${process.env.SERVER}/products`);
   const products = await res.json();
 
   const paths = products.data.map(product => ({
@@ -63,7 +63,7 @@ export const getStaticProps = async context => {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/api/productById/?productId=${params.productId}`
+    `${process.env.SERVER}/productById/?productId=${params.productId}`
   );
   const product = await res.json();
 

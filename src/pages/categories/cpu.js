@@ -20,7 +20,7 @@ CpuPage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://localhost:5000/api/productByCategory?category=cpu`
+    `${process.env.SERVER}/productByCategory?category=cpu`
   );
   const product = await res.json();
 

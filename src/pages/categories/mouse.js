@@ -20,7 +20,7 @@ MousePage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://localhost:5000/api/productByCategory?category=mouse`
+    `${process.env.SERVER}/productByCategory?category=mouse`
   );
   const product = await res.json();
 

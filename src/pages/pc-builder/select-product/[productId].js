@@ -66,7 +66,7 @@ export const getServerSideProps = async context => {
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:5000/api/productByCategory?category=${params.productId}`
+    `${process.env.SERVER}/productByCategory?category=${params.productId}`
   );
   const products = await res.json();
 
