@@ -6,13 +6,15 @@ import { CgSmartphoneRam } from 'react-icons/cg';
 import { FaPowerOff } from 'react-icons/fa';
 import { MdStorage } from 'react-icons/md';
 import { checkComponents } from '@/utils/checkComponents';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import { removeAllComponents } from '@/redux/features/pcBuilderSlice';
 
 const PcBuilderPage = () => {
   const { components } = useSelector(state => state.pcBuilder);
   const rourter = useRouter();
+  const dispatch = useDispatch();
 
   const allComponents = [
     {
@@ -83,6 +85,10 @@ const PcBuilderPage = () => {
         onClick={() => {
           toast('Build Complete');
           rourter.push('/');
+
+          setTimeout(() => {
+            dispatch(removeAllComponents());
+          }, 1000);
         }}
       >
         Complete Build

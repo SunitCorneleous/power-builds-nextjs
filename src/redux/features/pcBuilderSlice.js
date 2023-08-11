@@ -35,9 +35,20 @@ export const pcBuilderSlice = createSlice({
         state.components[componentName] = action.payload.item;
       }
     },
+    removeAllComponents: state => {
+      state.components = {
+        cpu: {},
+        motherboard: {},
+        ram: {},
+        power: {},
+        storage: {},
+        monitor: {},
+        gpu: {},
+      };
+    },
   },
 });
 
-export const { addComponent } = pcBuilderSlice.actions;
+export const { addComponent, removeAllComponents } = pcBuilderSlice.actions;
 
 export default pcBuilderSlice.reducer;
