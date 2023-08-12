@@ -1,3 +1,14 @@
+# Power Builds
+
+## Power Buids is a pc builder web application where user can login using google account to build their dream pc. The web application is developed using Next.js framework.
+
+## Main Features:
+
+- User can navigate through different categories. (exp: cpu, ram, storage, monitor)
+- User can see details of particular product/component.
+- User can login using google account to build pc.
+- After login using google account user can add components, after adding 5 or more components user can complete the build clicking the complete build button.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
